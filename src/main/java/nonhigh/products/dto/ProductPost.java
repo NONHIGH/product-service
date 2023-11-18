@@ -1,14 +1,17 @@
 package nonhigh.products.dto;
 
-import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 import nonhigh.products.entity.Category;
-
 import java.util.Date;
+
 
 @Data
 @AllArgsConstructor
+@Builder
+@NoArgsConstructor
 public class ProductPost {
     private Long id;
     private String name;

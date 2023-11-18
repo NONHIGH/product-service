@@ -15,13 +15,10 @@ import java.util.Date;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
-import lombok.Getter;
 import lombok.NoArgsConstructor;
-import lombok.Setter;
 
 @Entity
 @Table(name = "tbl_products")
-@Getter @Setter
 @Data
 @AllArgsConstructor @NoArgsConstructor @Builder
 
@@ -33,6 +30,7 @@ public class Product {
     private String description;
     private Double price;
     private Double stock;
+    @Column(name="status_del_producto")
     private String status;
     @Temporal(TemporalType.TIMESTAMP)
     @Column(name = "create_at")
@@ -40,5 +38,4 @@ public class Product {
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "category_id")
     private Category category;
-    
 }

@@ -1,14 +1,10 @@
 package nonhigh.products.service;
 
-import nonhigh.products.dto.ProductEdit;
 import nonhigh.products.dto.ProductPost;
 import nonhigh.products.entity.Product;
 import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Service;
-import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler;
 
 import java.util.List;
-import java.util.Objects;
 
 public interface ProductService {
     public ResponseEntity<List<Product>> findProducts();
@@ -19,5 +15,10 @@ public interface ProductService {
 
     public ResponseEntity<?> deleteProduct(Long id);
 
-    public ResponseEntity<Product> editProduct(ProductEdit product);
+    public ResponseEntity<Product> editProduct(Product product, Long idProduct);
+
+    public ResponseEntity<Product> editStockProduct(Long id, Double stock);
+
+    public ResponseEntity<List<Product>> findProductsByCategory(String name);
+    public ResponseEntity<List<Product>> findProductsByCategory(List<String> names);
 }
